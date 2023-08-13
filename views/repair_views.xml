@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo>
+
+    <!-- Inherint form view to modify -->
+<record id="repair_order_form_view_inherit" model="ir.ui.view">
+    <field name="name">repair.order.form.inherit</field>
+    <field name="model">repair.order</field>
+    <field name="inherit_id" ref="repair.view_repair_order_form"/>
+    <field name="arch" type="xml">
+
+        <field name="description" position="before">
+            <field name = "typerepair"/>
+        </field>  
+
+
+       <field name="partner_id" position="after">
+          <field name="partner1_phone" />
+        </field>
+
+        
+
+        <field name="description" position="replace">
+            <field name="description" required="1"/>       <!-- campo requerido -->
+        </field>
+
+        <field name="partner_id" position="replace">
+          <field name="partner_id" required="1"/>       <!-- campo requerido -->
+      </field>
+      
+      <field name = "x_faceid" position="after"> 
+          <field name = "microphone" />
+          <field name = "flash" />
+      </field>
+
+        
+
+    </field>
+</record>
+
+</odoo>
